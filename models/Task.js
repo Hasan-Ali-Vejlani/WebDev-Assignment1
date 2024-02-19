@@ -46,8 +46,14 @@ const Task = sequelize.define('task', {
 Task.belongsTo(User, { foreignKey: 'CreatedBy' });
 Task.belongsTo(User, { foreignKey: 'AssignedTo' });
 
-sequelize.sync({ force: true }).then(() => {
+Task.sync().then(() => {
   console.log('Task table created!');
+}).catch((error) => {
+  if (error.name === 'SequelizeDatabaseError' && error.message.includes('Table')) {
+    console.log('Task table already exists.');
+  } else {
+    console.error(error);
+  }
 });
 
 module.exports = Task;

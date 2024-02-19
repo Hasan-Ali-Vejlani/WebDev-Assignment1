@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "c1e2918e-38a4-42c2-8104-1dd8e7cb0d5d",
+		"name": "WebDev-Assignment1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33038287"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\" : \"Hasan Ali\",\r\n    \"LastName\" : \"Vejlani\",\r\n    \"DOB\" : \"2002-05-03\",\r\n    \"IsManager\" : true,\r\n    \"Email\" : \"havmail@gmail.com\",\r\n    \"Password\" : \"PassW0RD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LogIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\" : \"havmail@gmail.com\",\r\n    \"Password\" : \"PassW0RD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\" : \"Other\",\r\n    \"LastName\" : \"Employee\",\r\n    \"DOB\" : \"2012-12-12\",\r\n    \"IsManager\" : false,\r\n    \"Email\" : \"oe2@gmail.com\",\r\n    \"Password\" : \"PassW0RD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LogIn2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\" : \"oe2@gmail.com\",\r\n    \"Password\" : \"PassW0RD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InvalidSignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\" : \"Person\",\r\n    \"LastName\" : \"1\",\r\n    \"DOB\" : \"2020-06-15\",\r\n    \"IsManager\" : false,\r\n    \"Email\" : \"mail.com\",\r\n    \"Password\" : \"Passssssssss\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6Imhhdm1haWxAZ21haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNC0wMi0xOVQxMzozMjozMS40OTNaIiwiaWF0IjoxNzA4MzQ5NTUxLCJleHAiOjE3MDg0MzU5NTF9.cL3NWE6VwrCnb3MBSLo0cyF9ahO0jtW0_EwjopDhXbw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"Task1\",\r\n    \"Description\": \"Create Git repository.\",\r\n    \"CreatedBy\": 1,\r\n    \"AssignedTo\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tasks/addTask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"addTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6Imhhdm1haWxAZ21haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNC0wMi0xOVQxMzo1MDo0Ny44MjZaIiwiaWF0IjoxNzA4MzUwNjQ3LCJleHAiOjE3MDg0MzcwNDd9.jp7IlY3ecZWh7PuYFGlVKiM7ZPvAEixfNN1VLM1V48g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/tasks/deleteTask/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"deleteTask",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6Imhhdm1haWxAZ21haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNC0wMi0xOVQxMzozMjozMS40OTNaIiwiaWF0IjoxNzA4MzQ5NTUxLCJleHAiOjE3MDg0MzU5NTF9.cL3NWE6VwrCnb3MBSLo0cyF9ahO0jtW0_EwjopDhXbw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"Task1\",\r\n    \"Description\": \"Create Git repository.\",\r\n    \"CreatedBy\": 1,\r\n    \"AssignedTo\": 2,\r\n    \"Status\" : \"Completed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tasks/updateTask/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"updateTask",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserTasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6Imhhdm1haWxAZ21haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNC0wMi0xOVQxMzoyNjowNS4xNTJaIiwiaWF0IjoxNzA4MzQ5MTY1LCJleHAiOjE3MDg0MzU1NjV9.lNjdDFI5vtpfG9xeTl-Yny92q4ZXR5UpQr89ux6oiA4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/tasks/getMyTasks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"getMyTasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetManagerTasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6Imhhdm1haWxAZ21haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNC0wMi0xOVQxMzoyNjowNS4xNTJaIiwiaWF0IjoxNzA4MzQ5MTY1LCJleHAiOjE3MDg0MzU1NjV9.lNjdDFI5vtpfG9xeTl-Yny92q4ZXR5UpQr89ux6oiA4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/tasks/getAllTasks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"getAllTasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Summary",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6Imhhdm1haWxAZ21haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyNC0wMi0xOVQxMzozMjozMS40OTNaIiwiaWF0IjoxNzA4MzQ5NTUxLCJleHAiOjE3MDg0MzU5NTF9.cL3NWE6VwrCnb3MBSLo0cyF9ahO0jtW0_EwjopDhXbw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/tasks/user_summary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"user_summary"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

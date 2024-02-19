@@ -37,8 +37,14 @@ const User = sequelize.define('User', {
   },
 });
 
-sequelize.sync({ force: true }).then(() => {
+User.sync().then(() => {
   console.log('User table created!');
+}).catch((error) => {
+  if (error.name === 'SequelizeDatabaseError' && error.message.includes('Table')) {
+    console.log('User table already exists.');
+  } else {
+    console.error(error);
+  }
 });
 
 module.exports = User;

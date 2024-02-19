@@ -46,7 +46,7 @@ function validateSignupData(firstName, lastName, email, password) {
         DOB,
         IsManager,
         Email,
-        password: hashedPassword
+        Password: hashedPassword
       });
   
       // Send successful response with the created user
@@ -63,16 +63,16 @@ function validateSignupData(firstName, lastName, email, password) {
 
 router.post("/login", async (req, res) => {
     try {
-        const { email, password } = req.body
+        const { Email, Password } = req.body
 
-        const user = await Users.findOne({ email })
+        const user = await Users.findOne({ Email })
         if (!user) return res.json({ msg: "USER NOT FOUND" })
 
-        const passwordCheck = await bcrypt.compare(password, user.password);
+        const passwordCheck = await bcrypt.compare(Password, user.Password);
         if (!passwordCheck) return res.json({ msg: "WRONG PASSWORD" })
 
         const token = jwt.sign({
-            email,
+            Email,
             createdAt: new Date(),
             admin: user.admin,
         }, "MY_SECRET", { expiresIn: "1d" });
